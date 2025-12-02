@@ -179,10 +179,7 @@ impl eframe::App for MultiRecorderApp {
             // Status area
             egui::Frame::none()
                 .fill(egui::Color32::from_rgb(40, 40, 45))
-                .stroke(egui::Stroke::new(
-                    1.0,
-                    egui::Color32::from_rgb(60, 60, 65),
-                ))
+                .stroke(egui::Stroke::new(1.0, egui::Color32::from_rgb(60, 60, 65)))
                 .inner_margin(egui::Margin::same(10.0))
                 .show(ui, |ui| {
                     ui.horizontal(|ui| {

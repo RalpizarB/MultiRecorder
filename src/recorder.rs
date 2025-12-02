@@ -187,7 +187,7 @@ mod tests {
     fn test_state_transitions() {
         let recorder = AudioRecorder::new();
         assert_eq!(recorder.get_state(), RecorderState::Idle);
-        
+
         // After drop, state should still be idle if no recording started
         drop(recorder);
     }
