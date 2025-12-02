@@ -2,6 +2,33 @@
 
 A modern, cross-platform multi-track audio recorder with a friendly GUI built in Rust.
 
+```
+┌─────────────────────────────────────────────────────┐
+│          🎙️  MultiRecorder                         │
+│    Modern Multi-Track Audio Recorder                │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│  Input Device:  [Default Audio Input      ▼]        │
+│  Output File:   [recording_20231202_143022.wav]     │
+│                                                      │
+│                 [🔄 Refresh Devices]                │
+│                                                      │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│    [  ⏺ Start Recording  ]     ⏱ Duration: 0.0s    │
+│                                                      │
+├─────────────────────────────────────────────────────┤
+│  Status: Ready to record                            │
+├─────────────────────────────────────────────────────┤
+│  ℹ️ Information                                      │
+│    Features:                                        │
+│      • Record audio from any input device           │
+│      • High-quality WAV output                      │
+│      • Real-time recording indicator                │
+│      • Modern and intuitive interface               │
+└─────────────────────────────────────────────────────┘
+```
+
 ## Features
 
 - 🎙️ Record audio from any input device
