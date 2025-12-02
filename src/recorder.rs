@@ -163,3 +163,32 @@ impl Drop for AudioRecorder {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_recorder_initialization() {
+        let recorder = AudioRecorder::new();
+        assert_eq!(recorder.get_state(), RecorderState::Idle);
+    }
+
+    #[test]
+    fn test_get_input_devices() {
+        let recorder = AudioRecorder::new();
+        let devices = recorder.get_input_devices();
+        // Should return a list (might be empty in CI environments)
+        // Just verify it doesn't panic
+        let _ = devices.len();
+    }
+
+    #[test]
+    fn test_state_transitions() {
+        let recorder = AudioRecorder::new();
+        assert_eq!(recorder.get_state(), RecorderState::Idle);
+        
+        // After drop, state should still be idle if no recording started
+        drop(recorder);
+    }
+}
