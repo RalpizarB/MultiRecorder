@@ -1,0 +1,21 @@
+[package]
+name = "multirecorder"
+version = "0.1.0"
+edition = "2021"
+authors = ["MultiRecorder Contributors"]
+description = "A modern multi-track audio/video recorder with a friendly GUI"
+license = "GPL-3.0"
+repository = "https://github.com/RalpizarB/MultiRecorder"
+
+[dependencies]
+eframe = "0.28"
+egui = "0.28"
+egui_extras = { version = "0.28", features = ["default"] }
+cpal = "0.15"
+hound = "3.5"
+chrono = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
