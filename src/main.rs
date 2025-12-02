@@ -40,8 +40,9 @@ impl MultiRecorderApp {
             input_devices: Vec::new(),
             selected_device_idx: 0,
             output_filename: format!(
-                "recording_{}.wav",
-                chrono::Local::now().format("%Y%m%d_%H%M%S")
+                "recording_{}_{}.wav",
+                chrono::Local::now().format("%Y%m%d_%H%M%S"),
+                chrono::Local::now().timestamp_subsec_millis()
             ),
         };
         app.refresh_devices();

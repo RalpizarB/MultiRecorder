@@ -116,7 +116,9 @@ impl AudioRecorder {
                 move |data: &[T], _: &cpal::InputCallbackInfo| {
                     if let Ok(mut writer) = writer.lock() {
                         for &sample in data {
-                            let _ = writer.write_sample(sample);
+                            if let Err(e) = writer.write_sample(sample) {
+                                eprintln!("Error writing sample: {}", e);
+                            }
                         }
                     }
                 },
@@ -156,6 +158,8 @@ impl AudioRecorder {
 
 impl Drop for AudioRecorder {
     fn drop(&mut self) {
-        let _ = self.stop_recording();
+        if let Err(e) = self.stop_recording() {
+            eprintln!("Error stopping recording during cleanup: {}", e);
+        }
     }
 }
